@@ -1,0 +1,46 @@
+<div class="container mt-4">
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>
+      <i class="fa-solid fa-book"></i> Böcker
+    </h2>
+
+    <button class="btn btn-success" routerLink="/books/add">
+      <i class="fa-solid fa-plus"></i> Lägg till bok
+    </button>
+  </div>
+
+  <table class="table table-striped table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Titel</th>
+        <th>Författare</th>
+        <th>Publiceringsdatum</th>
+        <th>Åtgärder</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        @for (book of books; track book.id) {
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.publishedYear }}</td>
+
+                <td>
+                <button class="btn btn-warning btn-sm me-2"
+                        [routerLink]="['/books/edit-book', book.id]">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+
+                <button class="btn btn-danger btn-sm"
+                        (click)="deleteBook(book.id)">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+                </td>
+            </tr>
+            }
+    </tbody>
+
+  </table>
+</div>
