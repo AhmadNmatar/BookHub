@@ -8,7 +8,7 @@ namespace BookApi.Controllers;
 
 [Route("[controller]")] 
 [ApiController]
-//[Authorize]
+[Authorize]
 public class BooksController : ControllerBase
 {
     private readonly AppDbContext _context;

@@ -1,1 +1,56 @@
-<p>edit-quote works!</p>
+<div class="container mt-4">
+
+  <div class="card shadow p-4">
+
+    <h2 class="mb-4">
+      <i class="fa-solid fa-plus"></i>
+      Lägg till citat
+    </h2>
+
+    <form (ngSubmit)="updateQuote()">
+
+      <!-- Title -->
+      <div class="mb-3">
+        <label class="form-label">Citat</label>
+
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="quote.text"
+          name="title"
+          required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Författare</label>
+
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="quote.author"
+          name="author"
+          required>
+      </div>
+
+      <div class="d-flex gap-2">
+
+        <button type="submit" class="btn btn-success">
+          <i class="fa-solid fa-check"></i>
+          Spara
+        </button>
+
+        <button
+          type="button"
+          class="btn btn-secondary"
+          routerLink="/quotes">
+
+          Tillbaka
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

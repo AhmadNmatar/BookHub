@@ -21,7 +21,7 @@
     </thead>
 
     <tbody>
-        @for (book of books; track book.id) {
+        @for (book of booksList; track book.id) {
             <tr>
                 <td>{{ book.title }}</td>
                 <td>{{ book.author }}</td>
@@ -29,7 +29,7 @@
 
                 <td>
                 <button class="btn btn-warning btn-sm me-2"
-                        [routerLink]="['/books/edit-book', book.id]">
+                        [routerLink]="['/books/edit', book.id]">
                     <i class="fa-solid fa-pen"></i>
                 </button>
 

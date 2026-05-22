@@ -57,7 +57,7 @@ public class QuotesController: ControllerBase
         
     }
 
-    [HttpDelete]
+    [HttpDelete("{id}")]
     public async Task<ActionResult> DeleteQuote(int id)
     {
         var quote = await _context.Quotes.FindAsync(id);

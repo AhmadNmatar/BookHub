@@ -1,1 +1,57 @@
-<p>edit-book works!</p>
+<div class="container mt-4">
+
+  <div class="card shadow p-4">
+
+    <h2 class="mb-4">
+      <i class="fa-solid fa-pen"></i>
+      Redigera bok
+    </h2>
+
+    <form (ngSubmit)="updateBook()">
+
+      <!-- Title -->
+      <div class="mb-3">
+        <label class="form-label">Titel</label>
+
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="book.title"
+          name="title"
+          required>
+      </div>
+
+      <!-- Author -->
+      <div class="mb-3">
+        <label class="form-label">Författare</label>
+
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="book.author"
+          name="author"
+          required>
+      </div>
+
+      <!-- Published Date -->
+      <div class="mb-3">
+        <label class="form-label">Publiceringsdatum</label>
+
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="book.publishedYear"
+          name="publishedDate"
+          required>
+      </div>
+
+      <button type="submit" class="btn btn-success">
+        <i class="fa-solid fa-check"></i>
+        Uppdatera
+      </button>
+
+    </form>
+
+  </div>
+
+</div>

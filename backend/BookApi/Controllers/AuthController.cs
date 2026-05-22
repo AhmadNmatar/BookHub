@@ -22,8 +22,8 @@ public class AuthController : ControllerBase
         _config= config;
     }
 
-        [HttpPost("register")]
-    public async Task<ActionResult<User>> Register(User user)
+    [HttpPost("register")]
+    public async Task<ActionResult<AuthResponse>> Register(User user)
     {
         _context.Users.Add(user);
 
@@ -31,28 +31,28 @@ public class AuthController : ControllerBase
 
         var userToken = GenerateToken(user);
 
-        return Ok(userToken); 
+        return Ok(new AuthResponse { Token = userToken }); 
     }
 
      [HttpPost("login")]
-    public async Task<ActionResult<string>> Login(User loginUser)
+    public async Task<ActionResult<AuthResponse>> Login(LoginRequest loginRequest)
     {
         var user = await _context.Users
-            .FirstOrDefaultAsync(u => u.Email == loginUser.Email);
+            .FirstOrDefaultAsync(u => u.Email == loginRequest.Email);
 
         if (user == null)
         {
             return Unauthorized("Invalid email");
         }
 
-        if (user.Password != loginUser.Password)
+        if (user.Password != loginRequest.Password)
         {
             return Unauthorized("Invalid password");
         }
 
         var userToken = GenerateToken(user);
 
-        return Ok(userToken); 
+        return Ok(new AuthResponse { Token = userToken }); 
     }
         
 
