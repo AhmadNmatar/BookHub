@@ -8,10 +8,10 @@ import { BookService } from '../../../services/book.service';
   templateUrl: './book-list.html',
   styleUrl: './book-list.css',
 })
-export class BookList implements OnInit { // OnInit tell angular to run this code whenever component is open or loaded
+export class BookList implements OnInit { 
  booksList: Book[] = [];
 
-  constructor(private bookService: BookService) {} //Check if I need to add router
+  constructor(private bookService: BookService) {} 
 
   ngOnInit(): void {
 

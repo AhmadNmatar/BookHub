@@ -6,7 +6,7 @@ import { BookService } from '../../../services/book.service';
 
 @Component({
   selector: 'app-add-book',
-  standalone: true, // what is standalone?
+  standalone: true, 
   imports: [FormsModule],
   templateUrl: './add-book.html',
   styleUrl: './add-book.css',

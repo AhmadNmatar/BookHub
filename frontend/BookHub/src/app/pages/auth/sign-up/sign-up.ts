@@ -24,7 +24,6 @@ export class SignUp implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Redirect to /books if already logged in
     if (this.authService.isLoggedIn()) {
       this.router.navigate(['/books']);
     }
@@ -32,9 +31,7 @@ export class SignUp implements OnInit {
 
   signup() {
 
-    console.log(this.user.firstName + this.user.lastName);
-    console.log(this.user.email);
-    console.log(this.user.password);
+
 
         this.authService.register(this.user).subscribe({
       next: () => {

@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { QuoteService } from '../../../services/quote.service';
 @Component({
   selector: 'app-add-quote',
-  standalone: true, // what is standalone?
+  standalone: true, 
   imports: [FormsModule],
   templateUrl: './add-quote.html',
   styleUrl: './add-quote.css',

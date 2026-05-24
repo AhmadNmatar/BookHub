@@ -3,10 +3,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Router } from '@angular/router';
 import { Auth } from '../../services/auth';
 import { ThemeService } from '../../services/theme';
-import { NgClass, NgIf } from '@angular/common';
 @Component({
   selector: 'app-navbar',
-  standalone: true, // check what is this later
+  standalone: true, 
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',

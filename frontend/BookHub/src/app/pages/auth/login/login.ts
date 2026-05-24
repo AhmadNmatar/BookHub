@@ -24,7 +24,6 @@ export class Login implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Redirect to /books if already logged in
     if (this.authService.isLoggedIn()) {
       this.router.navigate(['/books']);
     }

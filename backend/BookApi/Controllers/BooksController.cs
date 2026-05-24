@@ -18,14 +18,12 @@ public class BooksController : ControllerBase
         _context = context;
     }
 
-    // GET: api/books
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
     {
         return await _context.Books.ToListAsync();
     }
 
-    // GET: api/books/5
     [HttpGet("{id}")]
     public async Task<ActionResult<Book>> GetBookById(int id)
     {
@@ -37,7 +35,6 @@ public class BooksController : ControllerBase
         return book;
     }
 
-    // POST: api/books
     [HttpPost]
     public async Task<ActionResult<Book>> PostBook(Book book)
     {

@@ -61,8 +61,6 @@ export class EditBook implements OnInit{
 
       next: () => {
 
-        console.log('Book updated');
-
         this.router.navigate(['/books']);
       },
 
