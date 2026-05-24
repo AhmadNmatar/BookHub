@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { Auth } from '../../../services/auth';
@@ -11,7 +11,7 @@ import { LoginForm } from '../../../models/login-form';
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
-export class Login {
+export class Login implements OnInit {
   data : LoginForm = {
     email : '',
     password : '',
@@ -22,6 +22,13 @@ export class Login {
     private authService: Auth,
     private router: Router
   ) {}
+
+  ngOnInit(): void {
+    // Redirect to /books if already logged in
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['/books']);
+    }
+  }
 
   login() {
 

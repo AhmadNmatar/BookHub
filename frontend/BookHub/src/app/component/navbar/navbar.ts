@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Router } from '@angular/router';
 import { Auth } from '../../services/auth';
-
+import { ThemeService } from '../../services/theme';
+import { NgClass, NgIf } from '@angular/common';
 @Component({
   selector: 'app-navbar',
   standalone: true, // check what is this later
@@ -14,8 +15,19 @@ export class Navbar {
 
   constructor(
   private authService: Auth,
-  private router: Router
+  private router: Router,
+  public themeService: ThemeService
 ) {}
+
+
+toggleTheme() {
+
+  this.themeService.toggleTheme();
+}
+
+isLoggedIn(): boolean {
+  return this.authService.isLoggedIn();
+}
 
 logout() {
 

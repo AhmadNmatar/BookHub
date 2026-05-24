@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Smooth transition */
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* DARK THEME */
+body.dark-theme {
+  background-color: #121212;
+  color: white;
+}
+
+/* Cards */
+body.dark-theme .card {
+  background-color: #1e1e1e;
+  color: white;
+  border-color: #333;
+}
+
+/* Inputs */
+body.dark-theme .form-control {
+  background-color: #2a2a2a;
+  color: white;
+  border-color: #444;
+}
+
+/* Tables */
+body.dark-theme .table {
+  color: white;
+}
+
+/* Navbar */
+body.dark-theme .navbar {
+  background-color: #000 !important;
+}
