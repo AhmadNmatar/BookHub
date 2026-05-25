@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://bookhub-backend-u86h.onrender.com'
+  apiUrl: 'https://bookhub-backend-kcxy.onrender.com'
 };
