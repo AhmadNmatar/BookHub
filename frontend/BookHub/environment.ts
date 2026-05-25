@@ -1,4 +1,4 @@
 export const environment = {
-  production: false,
-  apiUrl: 'http://localhost:5250'
+  production: true,
+  apiUrl: 'https://bookhub-backend-u86h.onrender.com'
 };
